@@ -1,0 +1,1 @@
+Reviewed 2026-11-05: https://www.sjh.com.tw/en/, its primary navigation, and https://www.sjh.com.tw/en/product. The catalogue uses clear product-family navigation and keeps individual heater types browsable. Adopt category-first discoverability; do not copy unrelated taxonomy, claims, copy or images.

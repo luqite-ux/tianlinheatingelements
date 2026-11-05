@@ -1,0 +1,39 @@
+{
+  "context": {
+    "projectId": "project-ed780a7f-1e46-48e3-8654-2a07a43eb262",
+    "runId": "run-3bbfa5d0-bf9c-46ad-b97f-3ffde266a0c0",
+    "purpose": "build"
+  },
+  "scope": "current-run-only",
+  "otherRunIds": [],
+  "checkedAt": "2026-11-05T11:40:11.433Z",
+  "complete": false,
+  "issues": [
+    "QUERY_FAILED",
+    "ADOPTION_UNRECORDED",
+    "DELIVERY_UNRECORDED"
+  ],
+  "pending": 0,
+  "failedQueryCount": 1,
+  "queries": [
+    {
+      "receiptPath": "D:\\Cursor\\Grand\\dulizhan\\tianlinheatingelements\\deliverables\\case-query-failed-fe4d1849-2760-485b-9866-33fb33094d75.json",
+      "requestId": "failed-fe4d1849-2760-485b-9866-33fb33094d75",
+      "request": {
+        "match": "fuzzy",
+        "sort": "relevance",
+        "limit": "5",
+        "query": "PTC heater aluminum foil heater tubular heating element silicone heating wire OEM appliances",
+        "industry": "Electrical Equipment Manufacturing"
+      },
+      "status": 0,
+      "decision": "missing",
+      "decisionSent": false,
+      "caseSlugs": [],
+      "reason": "",
+      "externalReferences": []
+    }
+  ],
+  "deliveries": [],
+  "note": "Current run only; other runs are not certified. Adoption is agent-reported, not Owner acceptance or proven design improvement."
+}

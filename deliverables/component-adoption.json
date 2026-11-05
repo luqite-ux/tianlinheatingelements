@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "sections": [
+    {
+      "sectionId": "hero",
+      "query": "hero industrial B2B component",
+      "candidates": [],
+      "decision": "no-match",
+      "receipt": "Native case/component search returned no production-ready reviewed match; retain customer-specific v0/custom implementation."
+    },
+    {
+      "sectionId": "product-families",
+      "query": "product-families industrial B2B component",
+      "candidates": [],
+      "decision": "no-match",
+      "receipt": "Native case/component search returned no production-ready reviewed match; retain customer-specific v0/custom implementation."
+    },
+    {
+      "sectionId": "applications",
+      "query": "applications industrial B2B component",
+      "candidates": [],
+      "decision": "no-match",
+      "receipt": "Native case/component search returned no production-ready reviewed match; retain customer-specific v0/custom implementation."
+    },
+    {
+      "sectionId": "engineering-proof",
+      "query": "engineering-proof industrial B2B component",
+      "candidates": [],
+      "decision": "no-match",
+      "receipt": "Native case/component search returned no production-ready reviewed match; retain customer-specific v0/custom implementation."
+    },
+    {
+      "sectionId": "manufacturing",
+      "query": "manufacturing industrial B2B component",
+      "candidates": [],
+      "decision": "no-match",
+      "receipt": "Native case/component search returned no production-ready reviewed match; retain customer-specific v0/custom implementation."
+    },
+    {
+      "sectionId": "quality-lab",
+      "query": "quality-lab industrial B2B component",
+      "candidates": [],
+      "decision": "no-match",
+      "receipt": "Native case/component search returned no production-ready reviewed match; retain customer-specific v0/custom implementation."
+    },
+    {
+      "sectionId": "certificates",
+      "query": "certificates industrial B2B motion component",
+      "candidates": [
+        {
+          "componentId": "original-certificate-motion",
+          "version": "1.0.0+a90bcac47616ba453be616bcec56ddfab85f7a704fe9c7c811706444362e7e24",
+          "packageHash": "a90bcac47616ba453be616bcec56ddfab85f7a704fe9c7c811706444362e7e24",
+          "location": "Homepage certificates and /certificates",
+          "importPath": "@/components/certificate-rail",
+          "productionReady": true,
+          "confidence": 0.95
+        }
+      ],
+      "decision": "selected",
+      "componentId": "original-certificate-motion",
+      "version": "1.0.0+a90bcac47616ba453be616bcec56ddfab85f7a704fe9c7c811706444362e7e24",
+      "packageHash": "a90bcac47616ba453be616bcec56ddfab85f7a704fe9c7c811706444362e7e24",
+      "location": "Homepage certificates and /certificates",
+      "importPath": "@/components/certificate-rail"
+    },
+    {
+      "sectionId": "clients",
+      "query": "clients industrial B2B motion component",
+      "candidates": [
+        {
+          "componentId": "react-bits:logo-loop",
+          "version": "1.0.0+eaaae2d5f40d74e480d03a787e445a0994ca80d7e815572f6e33d623189910df",
+          "packageHash": "eaaae2d5f40d74e480d03a787e445a0994ca80d7e815572f6e33d623189910df",
+          "location": "Homepage client references",
+          "importPath": "@/components/logo-loop",
+          "productionReady": true,
+          "confidence": 0.95
+        }
+      ],
+      "decision": "selected",
+      "componentId": "react-bits:logo-loop",
+      "version": "1.0.0+eaaae2d5f40d74e480d03a787e445a0994ca80d7e815572f6e33d623189910df",
+      "packageHash": "eaaae2d5f40d74e480d03a787e445a0994ca80d7e815572f6e33d623189910df",
+      "location": "Homepage client references",
+      "importPath": "@/components/logo-loop"
+    },
+    {
+      "sectionId": "process",
+      "query": "process industrial B2B component",
+      "candidates": [],
+      "decision": "no-match",
+      "receipt": "Native case/component search returned no production-ready reviewed match; retain customer-specific v0/custom implementation."
+    },
+    {
+      "sectionId": "faq",
+      "query": "faq industrial B2B component",
+      "candidates": [],
+      "decision": "no-match",
+      "receipt": "Native case/component search returned no production-ready reviewed match; retain customer-specific v0/custom implementation."
+    }
+  ]
+}

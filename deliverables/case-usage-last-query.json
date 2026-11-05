@@ -1,0 +1,20 @@
+{
+  "context": {
+    "projectId": "project-ed780a7f-1e46-48e3-8654-2a07a43eb262",
+    "runId": "run-3bbfa5d0-bf9c-46ad-b97f-3ffde266a0c0",
+    "purpose": "build"
+  },
+  "localRequestId": "failed-fe4d1849-2760-485b-9866-33fb33094d75",
+  "request": {
+    "match": "fuzzy",
+    "sort": "relevance",
+    "limit": "5",
+    "query": "PTC heater aluminum foil heater tubular heating element silicone heating wire OEM appliances",
+    "industry": "Electrical Equipment Manufacturing"
+  },
+  "at": "2026-11-05T11:01:24.149Z",
+  "status": 0,
+  "response": {
+    "error": "NETWORK_UNAVAILABLE"
+  }
+}

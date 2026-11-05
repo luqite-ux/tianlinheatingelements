@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "banners": [
+    {
+      "banner_id": "banner-1",
+      "message_role": "product-fit",
+      "headline": "Custom Heating Elements Built Around Your Drawing",
+      "supporting_copy": "Define voltage, power, dimensions, material, lead configuration and operating conditions for appliance OEM and equipment projects.",
+      "evidence_refs": ["customer-workbook:products", "banner/1.jpg"],
+      "primary_cta_label": "Explore Products",
+      "primary_cta_target": "/products"
+    },
+    {
+      "banner_id": "banner-2",
+      "message_role": "engineering-process",
+      "headline": "From Parameter Review to Production-Ready Heating Assemblies",
+      "supporting_copy": "Technical review connects buyer drawings with material selection, formed geometry, electrical checks and production controls.",
+      "evidence_refs": ["company-presentation:slides-10-12", "banner/2.jpg"],
+      "primary_cta_label": "View Manufacturing",
+      "primary_cta_target": "/manufacturing"
+    },
+    {
+      "banner_id": "banner-3",
+      "message_role": "quality-confidence",
+      "headline": "Traceable Quality Checks for OEM Heating Components",
+      "supporting_copy": "Resistance, dielectric strength, insulation, dimensions and connection quality are checked against defined requirements.",
+      "evidence_refs": ["inspection-equipment:TL001-TL026", "banner/3.jpg"],
+      "primary_cta_label": "Review Quality Controls",
+      "primary_cta_target": "/quality"
+    }
+  ]
+}

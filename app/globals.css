@@ -1,0 +1,266 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #ffffff;
+  --foreground: #0a1b36;
+  --card: #ffffff;
+  --card-foreground: #0a1b36;
+  --popover: #ffffff;
+  --popover-foreground: #0a1b36;
+  --primary: #0a2a5c;
+  --primary-foreground: #ffffff;
+  --secondary: #eef3fa;
+  --secondary-foreground: #0a2a5c;
+  --muted: #f2f5fa;
+  --muted-foreground: #46587a;
+  --accent: #e6eefb;
+  --accent-foreground: #0a2a5c;
+  --destructive: #b42318;
+  --destructive-foreground: #ffffff;
+  --border: #d5deec;
+  --input: #bccadf;
+  --ring: #1a63e0;
+  --radius: 0.25rem;
+
+  --navy: #0a2a5c;
+  --navy-deep: #061330;
+  --electric: #1a63e0;
+  --electric-soft: #dbe8fd;
+  --copper: #b8741f;
+  --copper-ink: #8a5413;
+  --paper: #f3f6fb;
+  --line: #d5deec;
+}
+
+@theme inline {
+  --font-sans: var(--font-barlow), 'Barlow', system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), 'IBM Plex Mono', ui-monospace, monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-navy: var(--navy);
+  --color-navy-deep: var(--navy-deep);
+  --color-electric: var(--electric);
+  --color-electric-soft: var(--electric-soft);
+  --color-copper: var(--copper);
+  --color-copper-ink: var(--copper-ink);
+  --color-paper: var(--paper);
+  --color-line: var(--line);
+  --radius-sm: 2px;
+  --radius-md: 3px;
+  --radius-lg: 4px;
+  --radius-xl: 6px;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: 'tnum' 1;
+  }
+  h1,
+  h2,
+  h3 {
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+  }
+  :focus-visible {
+    outline: 2px solid var(--electric);
+    outline-offset: 3px;
+  }
+}
+
+@utility wrap {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 1280px;
+  padding-inline: 1.25rem;
+  @media (min-width: 640px) {
+    padding-inline: 2rem;
+  }
+}
+
+@utility tech-grid {
+  background-image:
+    linear-gradient(to right, rgb(10 42 92 / 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(10 42 92 / 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+@utility tech-grid-dark {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+@utility eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  line-height: 1rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* ---------- Reveal (progressive enhancement; visible by default) ---------- */
+[data-reveal] {
+  transition:
+    opacity 0.75s cubic-bezier(0.2, 0.7, 0.2, 1) var(--reveal-delay, 0ms),
+    transform 0.75s cubic-bezier(0.2, 0.7, 0.2, 1) var(--reveal-delay, 0ms);
+}
+[data-reveal='pending'] {
+  opacity: 0;
+  transform: translateY(24px);
+}
+@media (max-width: 639px) {
+  [data-reveal='pending'] {
+    transform: translateY(16px);
+  }
+}
+
+/* ---------- Page-load entry (CSS only, no flash) ---------- */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.animate-rise {
+  animation: rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation-delay: var(--rise-delay, 0ms);
+}
+
+/* ---------- Hero carousel ---------- */
+.hero-slide {
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.9s ease,
+    visibility 0s linear 0.9s;
+}
+.hero-slide[data-active='true'] {
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity 0.9s ease,
+    visibility 0s;
+}
+.hero-copy {
+  transform: translateY(8px);
+  transition: transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.hero-slide[data-active='true'] .hero-copy {
+  transform: none;
+}
+@media (min-width: 768px) {
+  .hero-copy {
+    transform: translateY(18px);
+  }
+}
+.hero-img {
+  object-position: var(--pos-m, 50% 50%);
+}
+@media (min-width: 768px) {
+  .hero-img {
+    object-position: var(--pos-d, 50% 50%);
+  }
+}
+
+/* segmented progress (used by hero + certificate rail) */
+@keyframes seg-fill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+.seg-fill {
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+.seg-fill[data-state='done'] {
+  transform: scaleX(1);
+}
+.seg-fill[data-state='running'] {
+  animation: seg-fill var(--seg-duration, 7000ms) linear forwards;
+}
+.seg-fill[data-paused='true'] {
+  animation-play-state: paused;
+}
+
+/* ---------- Logo loop ---------- */
+@keyframes loop-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.loop-track {
+  display: flex;
+  width: max-content;
+  animation: loop-left var(--loop-duration, 40s) linear infinite;
+}
+.loop-track[data-paused='true'] {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  [data-reveal],
+  [data-reveal='pending'] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .animate-rise {
+    animation: none;
+  }
+  .hero-slide,
+  .hero-slide[data-active='true'] {
+    transition: none;
+  }
+  .hero-copy {
+    transform: none;
+    transition: none;
+  }
+  .seg-fill[data-state='running'] {
+    animation: none;
+    transform: scaleX(1);
+  }
+  .loop-track {
+    animation: none;
+  }
+}

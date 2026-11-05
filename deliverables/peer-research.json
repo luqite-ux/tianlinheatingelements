@@ -1,0 +1,260 @@
+{
+  "schemaVersion": 1,
+  "customerIndustry": "OEM electric heating elements for appliances and industrial equipment",
+  "products": [
+    "Aluminum foil heaters",
+    "Steel tubular heaters",
+    "Aluminum tubular heaters",
+    "Silicone-encapsulated PTC heaters",
+    "Mica heating plates",
+    "Silicone heating wire"
+  ],
+  "targetBuyers": [
+    "Appliance OEM engineering teams",
+    "Procurement managers",
+    "Equipment manufacturers"
+  ],
+  "peers": [
+    {
+      "url": "https://sanjtec.com/en/",
+      "normalizedDomain": "sanjtec.com",
+      "source": "web",
+      "pagesReviewed": [
+        {
+          "kind": "home",
+          "url": "https://sanjtec.com/en/",
+          "observation": "Product families; Client references; Certificates; Workshops and equipment; Process",
+          "checkedAt": "2026-11-05T11:05:00.000Z",
+          "evidence": {
+            "path": "deliverables/blueprint-evidence/sanjtec-review.txt",
+            "sha256": "5238a2a04d9fe9954e61c952afb1c2fe62e779f17db3c386a52da361e68d66fb"
+          }
+        },
+        {
+          "kind": "navigation",
+          "url": "https://sanjtec.com/en/",
+          "observation": "Primary navigation reviewed: Home, Products, About, Contact",
+          "checkedAt": "2026-11-05T11:05:00.000Z",
+          "evidence": {
+            "path": "deliverables/blueprint-evidence/sanjtec-review.txt",
+            "sha256": "5238a2a04d9fe9954e61c952afb1c2fe62e779f17db3c386a52da361e68d66fb"
+          }
+        },
+        {
+          "kind": "products",
+          "url": "https://sanjtec.com/en/products/",
+          "observation": "Product taxonomy reviewed: Heating components, Application-led products",
+          "checkedAt": "2026-11-05T11:05:00.000Z",
+          "evidence": {
+            "path": "deliverables/blueprint-evidence/sanjtec-review.txt",
+            "sha256": "5238a2a04d9fe9954e61c952afb1c2fe62e779f17db3c386a52da361e68d66fb"
+          }
+        }
+      ],
+      "overseasEvidence": {
+        "country": "China export-facing English site",
+        "whyCompetitor": "Manufacturer of related heating components serving overseas buyers.",
+        "sourceUrl": "https://sanjtec.com/en/"
+      },
+      "homeSections": [
+        "Product families",
+        "Client references",
+        "Certificates",
+        "Workshops and equipment",
+        "Process"
+      ],
+      "navigation": [
+        "Home",
+        "Products",
+        "About",
+        "Contact"
+      ],
+      "productTaxonomy": [
+        "Heating components",
+        "Application-led products"
+      ],
+      "adopt": [
+        "Evidence-rich manufacturing narrative",
+        "Separate clients and certificate trust sections"
+      ],
+      "reject": [
+        "Brand assets",
+        "Unverified claims",
+        "Page styling"
+      ],
+      "evidence": [
+        {
+          "url": "https://sanjtec.com/en/",
+          "observation": "Product families; Client references; Certificates; Workshops and equipment; Process"
+        },
+        {
+          "url": "https://sanjtec.com/en/",
+          "observation": "Primary navigation reviewed: Home, Products, About, Contact"
+        },
+        {
+          "url": "https://sanjtec.com/en/products/",
+          "observation": "Product taxonomy reviewed: Heating components, Application-led products"
+        }
+      ]
+    },
+    {
+      "url": "https://www.sjh.com.tw/en/",
+      "normalizedDomain": "sjh.com.tw",
+      "source": "web",
+      "pagesReviewed": [
+        {
+          "kind": "home",
+          "url": "https://www.sjh.com.tw/en/",
+          "observation": "Product categories; Catalogue navigation; Product detail access",
+          "checkedAt": "2026-11-05T11:05:00.000Z",
+          "evidence": {
+            "path": "deliverables/blueprint-evidence/sjh-review.txt",
+            "sha256": "22475f3b88c78b84ccf78d50d85ebecfa5ed3fb541b2c73cd805377fd6d99d7e"
+          }
+        },
+        {
+          "kind": "navigation",
+          "url": "https://www.sjh.com.tw/en/",
+          "observation": "Primary navigation reviewed: Home, Products, About, Contact",
+          "checkedAt": "2026-11-05T11:05:00.000Z",
+          "evidence": {
+            "path": "deliverables/blueprint-evidence/sjh-review.txt",
+            "sha256": "22475f3b88c78b84ccf78d50d85ebecfa5ed3fb541b2c73cd805377fd6d99d7e"
+          }
+        },
+        {
+          "kind": "products",
+          "url": "https://www.sjh.com.tw/en/product",
+          "observation": "Product taxonomy reviewed: Heater families, Individual products",
+          "checkedAt": "2026-11-05T11:05:00.000Z",
+          "evidence": {
+            "path": "deliverables/blueprint-evidence/sjh-review.txt",
+            "sha256": "22475f3b88c78b84ccf78d50d85ebecfa5ed3fb541b2c73cd805377fd6d99d7e"
+          }
+        }
+      ],
+      "overseasEvidence": {
+        "country": "Taiwan export-facing English site",
+        "whyCompetitor": "Established heating-component catalogue targeting overseas product buyers.",
+        "sourceUrl": "https://www.sjh.com.tw/en/"
+      },
+      "homeSections": [
+        "Product categories",
+        "Catalogue navigation",
+        "Product detail access"
+      ],
+      "navigation": [
+        "Home",
+        "Products",
+        "About",
+        "Contact"
+      ],
+      "productTaxonomy": [
+        "Heater families",
+        "Individual products"
+      ],
+      "adopt": [
+        "Category-first product navigation"
+      ],
+      "reject": [
+        "Unrelated broad taxonomy",
+        "Copy",
+        "Images"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.sjh.com.tw/en/",
+          "observation": "Product categories; Catalogue navigation; Product detail access"
+        },
+        {
+          "url": "https://www.sjh.com.tw/en/",
+          "observation": "Primary navigation reviewed: Home, Products, About, Contact"
+        },
+        {
+          "url": "https://www.sjh.com.tw/en/product",
+          "observation": "Product taxonomy reviewed: Heater families, Individual products"
+        }
+      ]
+    },
+    {
+      "url": "https://www.eptrend.com/",
+      "normalizedDomain": "eptrend.com",
+      "source": "web",
+      "pagesReviewed": [
+        {
+          "kind": "home",
+          "url": "https://www.eptrend.com/",
+          "observation": "Product-first hero; Product families; Inquiry CTA",
+          "checkedAt": "2026-11-05T11:05:00.000Z",
+          "evidence": {
+            "path": "deliverables/blueprint-evidence/eptrend-review.txt",
+            "sha256": "7a53c927def689bebf048fc93ffb052c8aabb16cc09a0291ce144b7b7303e25b"
+          }
+        },
+        {
+          "kind": "navigation",
+          "url": "https://www.eptrend.com/",
+          "observation": "Primary navigation reviewed: Home, Products, About, Contact",
+          "checkedAt": "2026-11-05T11:05:00.000Z",
+          "evidence": {
+            "path": "deliverables/blueprint-evidence/eptrend-review.txt",
+            "sha256": "7a53c927def689bebf048fc93ffb052c8aabb16cc09a0291ce144b7b7303e25b"
+          }
+        },
+        {
+          "kind": "products",
+          "url": "https://www.eptrend.com/products",
+          "observation": "Product taxonomy reviewed: Heating elements, Custom solutions",
+          "checkedAt": "2026-11-05T11:05:00.000Z",
+          "evidence": {
+            "path": "deliverables/blueprint-evidence/eptrend-review.txt",
+            "sha256": "7a53c927def689bebf048fc93ffb052c8aabb16cc09a0291ce144b7b7303e25b"
+          }
+        }
+      ],
+      "overseasEvidence": {
+        "country": "China export-facing English site",
+        "whyCompetitor": "OEM heating-element supplier addressing international buyers.",
+        "sourceUrl": "https://www.eptrend.com/"
+      },
+      "homeSections": [
+        "Product-first hero",
+        "Product families",
+        "Inquiry CTA"
+      ],
+      "navigation": [
+        "Home",
+        "Products",
+        "About",
+        "Contact"
+      ],
+      "productTaxonomy": [
+        "Heating elements",
+        "Custom solutions"
+      ],
+      "adopt": [
+        "Short product-to-RFQ path"
+      ],
+      "reject": [
+        "Generic composition",
+        "Unsupported claims",
+        "Copy and imagery"
+      ],
+      "evidence": [
+        {
+          "url": "https://www.eptrend.com/",
+          "observation": "Product-first hero; Product families; Inquiry CTA"
+        },
+        {
+          "url": "https://www.eptrend.com/",
+          "observation": "Primary navigation reviewed: Home, Products, About, Contact"
+        },
+        {
+          "url": "https://www.eptrend.com/products",
+          "observation": "Product taxonomy reviewed: Heating elements, Custom solutions"
+        }
+      ]
+    }
+  ],
+  "caseIntake": []
+}

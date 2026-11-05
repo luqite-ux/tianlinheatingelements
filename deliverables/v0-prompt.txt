@@ -1,0 +1,79 @@
+# Build an English-first B2B inquiry website for Anhui Tianlin Electric Appliance Co., Ltd.
+
+Create a complete, runnable Next.js 16 App Router frontend for `tianlinheatingelements.com`. This is the first visual design stage. The site serves appliance OEM/ODM and industrial buyers who need custom heating elements based on voltage, power, size, material, operating temperature, lead configuration, drawing and order volume.
+
+Brand: use the supplied TL / 天林电器 logo. Derive a precise industrial visual system from the supplied blue Banner artwork and real product/factory images: deep navy, electric blue and warm metallic accents, white/light neutral product stages, disciplined typography, technical grid details and crisp spacing. Avoid a generic SaaS dashboard, interchangeable blue-tech cards, excessive glow, floating particles, oversized rounded cards or text-box-plus-photo-box composition.
+
+Use all three supplied Banner images as the homepage hero carousel. They are complete customer-designated Banner assets and must not be replaced, filtered out or rebuilt as split cards. Keep product/equipment subjects bright and recognizable; do not cover the whole image with a dark overlay. Provide separate desktop and 390px crop/safe-area behavior, previous/next, pagination and pause. All important copy and buttons remain real HTML text.
+
+Authoritative product families:
+1. Aluminum Foil Heating Element (AH-F001): 12/24/220V, 1W–2kW, aluminum foil with PET/PVC insulation, sheet or custom die-cut, optional adhesive backing.
+2. Steel Tubular Heating Element (TH-S001): diameter 6/8/10mm, 12–240V, 50–2000W, carbon steel or 304 stainless steel, optional flange/bracket.
+3. Aluminum Tubular Heating Element (TH-A001): diameter 6/8/10mm, 12–240V, 30–1500W, 6063 aluminum, optional anodizing/mounting tabs.
+4. Silicone-Encapsulated PTC Heating Element (PTC-S001): 12/24/230V, 40–180°C constant-temperature range, full silicone encapsulation, custom leads and mounting holes.
+5. Mica Heating Plate (MH-M001): 12–230V, 10–800W, up to 500°C, natural mica, custom shapes.
+6. Silicone Insulated Heating Wire (SH-W001): 12/24/230V, 5–30W/m, -60–200°C, single/dual core, custom leads.
+
+Build full routes: Home; Products list with category filters; Product detail template; Applications; Manufacturing; Quality & Testing; Cases; Case detail; About; News list with a truthful empty state; News detail template; Contact/RFQ. Header must explicitly include Home and the logo links home. No shopping cart, checkout, price, fake news, fake case, fake form success or demo customer data.
+
+Homepage uses the stable section order from the attached plan: hero, product families, applications, engineering proof, manufacturing, quality lab, certificates, clients, cooperation process and FAQ. Use real supplied imagery. Product images remain fully visible with object-fit contain and visually continuous clean backgrounds. Manufacturing images must not be framed inside floating white photo cards.
+
+Certificates: create a dedicated certificate section/page where each supplied ISO, CCC, CE and explosion-proof certificate is an independent portrait item, fully visible, not combined into a collage. Use a segmented rail with manual navigation, pause, touch support and a static reduced-motion fallback.
+
+Clients: create a real client-logo section using only supplied logos. Present a left-moving continuous logo loop with pause on hover/focus and a visible pause option; mobile and reduced-motion users get a static wrapping list. Do not add other brands.
+
+Cases: source materials contain technical drawings/specifications rather than marketing case studies. Create the Cases information architecture and empty state, plus a template capable of showing a real application/drawing review later. Do not invent named projects or claim a drawing belongs to a public client.
+
+Motion: progressive enhancement only. Content is visible by default. Each major section and every repeated card participates in a perceptible in-view reveal; only mark an item completed after it truly enters the viewport. No global timeout may pre-complete below-the-fold animation. Include hover/focus feedback, touch-safe controls and `prefers-reduced-motion` static fallbacks.
+
+Facts: company founded in 2019; approximately 120 employees; approximately 15,000 m² facility; address No. 237 Meihong Road, Meilin Town, Ningguo, Anhui, China; phone +86 138 6696 2695; email info@tianlinheatingelements.com. Use the supplied workshop and test-equipment images as real evidence. Do not publish conflicting 128-person/8-million-capacity claims.
+
+Never write warranty, guarantee, warranties, guaranteed, 质保, 保修 or any synonymous service promise. Do not state 10–15 year life, 24/7 response, 48-hour arrival, 72-hour resolution, guaranteed seasonal delivery or unsupported certifications/capacity. Do not expose internal audit wording, source notes or customer-sensitive drawing identifiers.
+
+Technical delivery: accessible semantic HTML; one H1 per page; keyboard focus; 44px touch targets; responsive tables and forms; image alt; no video; dynamic current-year footer using `© <year> Anhui Tianlin Electric Appliance Co., Ltd. All rights reserved.` with normalized punctuation. Provide a square favicon derived from the supplied TL mark, consistent with the header logo. Keep locale-aware data interfaces so future languages do not require route/data redesign, while this first release is English only.
+
+
+
+# 首页媒体点位计划
+
+| sectionId | 采购任务 | 媒体与来源 | 桌面 / 390px | CTA |
+|---|---|---|---|---|
+| hero | 快速理解产品与定制能力 | `banner/1.jpg`、`2.jpg`、`3.jpg` 全部进入轮播 | 桌面 16:7 完整合成；手机独立安全区，不裁掉产品/设备主体；无 JS 显示首张 | View Products / Send RFQ |
+| product-families | 区分六个产品族 | 每族一张优化产品图，主体 `contain`、浅色连续背景 | 3×2 / 单列或双列；图片完整 | 对应 `/products?category=` |
+| applications | 说明冰箱、冷柜、空调、卫浴及设备加热应用 | 产品与工艺实拍，图标只辅助分类 | 横向叙事 / 触控卡片 | Discuss Your Application |
+| engineering-proof | 解释按图定制与技术资料 | PTC 工程图局部、铝箔规格书测试项，去除客户敏感标识 | 双栏 / 先结论后参数 | Submit Drawing |
+| manufacturing | 真实制造与车间 | `公司图片优化` 中厂区、车间、绕线、装配图 | 视觉拼贴 / 自然比例纵向 | View Manufacturing |
+| quality-lab | 证明检测能力 | 检测设备实拍与设备清单 | 图文交错 / 卡片列表 | Quality & Testing |
+| certificates | 每张证书独立可读 | ISO、CCC、CE、防爆证书；采用 `original-certificate-motion` 轨道 | 桌面四张可视、可暂停；手机单张滑动；减弱动画静态列表 | View Certificates |
+| clients | 展示资料提供的合作客户 | PPT 第 8 页独立 Logo；采用 `react-bits:logo-loop` | 左向循环、悬停/按钮暂停；手机与减弱动画静态换行 | Start a Project |
+| process | 解释询盘到批量合作 | Requirement → Drawing Review → Sampling → Testing → Production | 图形化流程 / 纵向步骤 | Request a Sample |
+| faq | 回答定制、MOQ、打样、交期、质检 | 无媒体；分组折叠 | 双栏 / 单栏 | Contact Engineering |
+
+VIDEO-DEFAULT-OFF：不建立或上传视频点位。
+
+
+
+# 动效方案
+
+结果：PASS。场景数：4。桌面：PASS。390px：PASS。`prefers-reduced-motion`：PASS。
+
+1. Banner：三张真实 Banner 低频淡入切换，保留前后按钮、分页与暂停；手机减少转场位移，静态 fallback 为首张。
+2. 内容进入视口：主要区块使用 20–28px 渐显上移，卡片 70ms 错峰；只在真实进入视口后记录完成，基础 CSS 默认内容可见，不使用全局超时提前结算。
+3. 合作客户：采用 React Bits LogoLoop 的连续左向循环，真实 Logo、悬停/显式控制暂停；减弱动画和小屏降级为静态可换行列表。
+4. 证书：采用 Anli `original-certificate-motion` 的分段推进机制，证书保持竖版完整显示，支持手动切换、触摸和暂停；减弱动画为横向静态滚动。
+
+外部候选：React Bits LogoLoop（采用）；Motion One scroll reveal pattern（仅借鉴逐区块触发，避免额外依赖）；GSAP horizontal loop（不采用，当前需求用原生/React 实现更轻）；React Bits ScrollExpand（不采用，普通新站视频关闭且会把关键证据藏到滚动之后）。
+
+
+
+Attachment order and role:
+1. Required Banner 1 of 3: https://pub-c7a22068052144a5805830c30d280128.r2.dev/site-assets/tianlinheatingelements/v0-input/01-a63e217b3fa1.jpg
+2. Required Banner 2 of 3: https://pub-c7a22068052144a5805830c30d280128.r2.dev/site-assets/tianlinheatingelements/v0-input/02-7af75c6b79f0.jpg
+3. Required Banner 3 of 3: https://pub-c7a22068052144a5805830c30d280128.r2.dev/site-assets/tianlinheatingelements/v0-input/03-f1ca9d20a123.jpg
+4. Official TL / Tianlin header logo and favicon source: https://pub-c7a22068052144a5805830c30d280128.r2.dev/site-assets/tianlinheatingelements/v0-input/04-3818e52b93ef.png
+5. Representative Aluminum Foil Heating Element: https://pub-c7a22068052144a5805830c30d280128.r2.dev/site-assets/tianlinheatingelements/v0-input/05-904cdc72eb07.jpg
+6. Representative Steel Tubular Heating Element: https://pub-c7a22068052144a5805830c30d280128.r2.dev/site-assets/tianlinheatingelements/v0-input/06-9e21eb612e98.jpg
+7. Representative Aluminum Tubular Heating Element: https://pub-c7a22068052144a5805830c30d280128.r2.dev/site-assets/tianlinheatingelements/v0-input/07-45f3cc65dc8f.jpg
+8. Representative Silicone-Encapsulated PTC Heating Element: https://pub-c7a22068052144a5805830c30d280128.r2.dev/site-assets/tianlinheatingelements/v0-input/08-3bb33840542b.jpg
+9. Representative Mica Heating Plate: https://pub-c7a22068052144a5805830c30d280128.r2.dev/site-assets/tianlinheatingelements/v0-input/09-0b234f4e421c.jpg
+10. Representative Silicone Insulated Heating Wire: https://pub-c7a22068052144a5805830c30d280128.r2.dev/site-assets/tianlinheatingelements/v0-input/10-3a09fee91547.jpg

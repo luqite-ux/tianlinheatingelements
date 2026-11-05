@@ -1,0 +1,269 @@
+{
+  "schemaVersion": 1,
+  "templateFamily": "oem-fabrication",
+  "navigation": [
+    {
+      "label": "Home",
+      "route": "/",
+      "level": 1,
+      "source": "Customer requirements and B2B peer navigation review",
+      "referencePeer": "sanjtec.com"
+    },
+    {
+      "label": "Products",
+      "route": "/products",
+      "level": 1,
+      "source": "Customer requirements and B2B peer navigation review",
+      "referencePeer": "sjh.com.tw"
+    },
+    {
+      "label": "Applications",
+      "route": "/applications",
+      "level": 1,
+      "source": "Customer requirements and B2B peer navigation review",
+      "referencePeer": "sanjtec.com"
+    },
+    {
+      "label": "Manufacturing",
+      "route": "/manufacturing",
+      "level": 1,
+      "source": "Customer requirements and B2B peer navigation review",
+      "referencePeer": "sanjtec.com"
+    },
+    {
+      "label": "Quality",
+      "route": "/quality",
+      "level": 1,
+      "source": "Customer requirements and B2B peer navigation review",
+      "referencePeer": "sanjtec.com"
+    },
+    {
+      "label": "Cases",
+      "route": "/cases",
+      "level": 1,
+      "source": "Customer requirements and B2B peer navigation review",
+      "referencePeer": "sanjtec.com"
+    },
+    {
+      "label": "About",
+      "route": "/about",
+      "level": 1,
+      "source": "Customer requirements and B2B peer navigation review",
+      "referencePeer": "sanjtec.com"
+    },
+    {
+      "label": "News",
+      "route": "/news",
+      "level": 1,
+      "source": "Customer requirements and B2B peer navigation review",
+      "referencePeer": "sanjtec.com"
+    },
+    {
+      "label": "Contact",
+      "route": "/contact",
+      "level": 1,
+      "source": "Customer requirements and B2B peer navigation review",
+      "referencePeer": "sanjtec.com"
+    }
+  ],
+  "productTaxonomy": [
+    {
+      "customerProduct": "Aluminum Foil Heating Element",
+      "category": "Foil heaters",
+      "route": "/products/aluminum-foil-heating-element",
+      "source": "Customer workbook and optimized product folders"
+    },
+    {
+      "customerProduct": "Steel Tubular Heating Element",
+      "category": "Tubular heaters",
+      "route": "/products/steel-tubular-heating-element",
+      "source": "Customer workbook and optimized product folders"
+    },
+    {
+      "customerProduct": "Aluminum Tubular Heating Element",
+      "category": "Tubular heaters",
+      "route": "/products/aluminum-tubular-heating-element",
+      "source": "Customer workbook and optimized product folders"
+    },
+    {
+      "customerProduct": "Silicone-Encapsulated PTC Heating Element",
+      "category": "PTC heaters",
+      "route": "/products/silicone-encapsulated-ptc-heating-element",
+      "source": "Customer workbook and optimized product folders"
+    },
+    {
+      "customerProduct": "Mica Heating Plate",
+      "category": "Mica heaters",
+      "route": "/products/mica-heating-plate",
+      "source": "Customer workbook and optimized product folders"
+    },
+    {
+      "customerProduct": "Silicone Insulated Heating Wire",
+      "category": "Heating wire",
+      "route": "/products/silicone-insulated-heating-wire",
+      "source": "Customer workbook and optimized product folders"
+    }
+  ],
+  "homepageSections": [
+    {
+      "sectionId": "hero",
+      "type": "hero",
+      "informationGain": "Product range and custom engineering entry point",
+      "purpose": "Answer buyer question for hero",
+      "factSource": "Workbook + three required banners",
+      "contentType": "carousel",
+      "desktopStrategy": "Full-width three-slide ad composition",
+      "mobile390Strategy": "Mobile-specific focal position and stacked copy",
+      "componentDecision": "custom",
+      "referencePeers": [
+        "sanjtec.com",
+        "sjh.com.tw",
+        "eptrend.com"
+      ]
+    },
+    {
+      "sectionId": "product-families",
+      "type": "product-grid",
+      "informationGain": "Six real product families and parameters",
+      "purpose": "Answer buyer question for product-families",
+      "factSource": "Workbook product table",
+      "contentType": "product cards",
+      "desktopStrategy": "3-column complete-product stages",
+      "mobile390Strategy": "Single-column complete-product stages",
+      "componentDecision": "custom",
+      "referencePeers": [
+        "sanjtec.com",
+        "sjh.com.tw",
+        "eptrend.com"
+      ]
+    },
+    {
+      "sectionId": "applications",
+      "type": "icon-grid",
+      "informationGain": "Buyer application fit",
+      "purpose": "Answer buyer question for applications",
+      "factSource": "Workbook and company presentation",
+      "contentType": "semantic icon cards",
+      "desktopStrategy": "Four-column icon grid",
+      "mobile390Strategy": "Two-column compact icon grid",
+      "componentDecision": "custom",
+      "referencePeers": [
+        "sanjtec.com",
+        "sjh.com.tw",
+        "eptrend.com"
+      ]
+    },
+    {
+      "sectionId": "engineering-proof",
+      "type": "technical-proof",
+      "informationGain": "Drawing-to-parameter engineering proof",
+      "purpose": "Answer buyer question for engineering-proof",
+      "factSource": "Three supplied PTC drawings",
+      "contentType": "technical callout",
+      "desktopStrategy": "Split drawing/parameter narrative",
+      "mobile390Strategy": "Stacked drawing/parameter narrative",
+      "componentDecision": "custom",
+      "referencePeers": [
+        "sanjtec.com",
+        "sjh.com.tw",
+        "eptrend.com"
+      ]
+    },
+    {
+      "sectionId": "manufacturing",
+      "type": "media-grid",
+      "informationGain": "Real factory, workshop and process evidence",
+      "purpose": "Answer buyer question for manufacturing",
+      "factSource": "Company photos and presentation",
+      "contentType": "photo mosaic",
+      "desktopStrategy": "Asymmetric manufacturing grid",
+      "mobile390Strategy": "Single-column grouped gallery",
+      "componentDecision": "custom",
+      "referencePeers": [
+        "sanjtec.com",
+        "sjh.com.tw",
+        "eptrend.com"
+      ]
+    },
+    {
+      "sectionId": "quality-lab",
+      "type": "equipment-grid",
+      "informationGain": "Inspection equipment and checked characteristics",
+      "purpose": "Answer buyer question for quality-lab",
+      "factSource": "Inspection equipment workbook",
+      "contentType": "icon/equipment list",
+      "desktopStrategy": "Structured equipment bands",
+      "mobile390Strategy": "Scrollable grouped list",
+      "componentDecision": "custom",
+      "referencePeers": [
+        "sanjtec.com",
+        "sjh.com.tw",
+        "eptrend.com"
+      ]
+    },
+    {
+      "sectionId": "certificates",
+      "type": "certificate-rail",
+      "informationGain": "Each supplied certificate independently readable",
+      "purpose": "Answer buyer question for certificates",
+      "factSource": "Certificate archive and presentation",
+      "contentType": "portrait rail",
+      "desktopStrategy": "Manual portrait certificate rail",
+      "mobile390Strategy": "Swipeable portrait certificates",
+      "componentDecision": "selected",
+      "referencePeers": [
+        "sanjtec.com",
+        "sjh.com.tw",
+        "eptrend.com"
+      ]
+    },
+    {
+      "sectionId": "clients",
+      "type": "logo-loop",
+      "informationGain": "Supplied client references",
+      "purpose": "Answer buyer question for clients",
+      "factSource": "Presentation slide 8",
+      "contentType": "logo marquee",
+      "desktopStrategy": "Pauseable horizontal loop",
+      "mobile390Strategy": "Reduced-speed swipe/loop",
+      "componentDecision": "selected",
+      "referencePeers": [
+        "sanjtec.com",
+        "sjh.com.tw",
+        "eptrend.com"
+      ]
+    },
+    {
+      "sectionId": "process",
+      "type": "process-steps",
+      "informationGain": "Custom order path from parameters to production",
+      "purpose": "Answer buyer question for process",
+      "factSource": "Process document and buyer-path planning",
+      "contentType": "step nodes",
+      "desktopStrategy": "Horizontal process nodes",
+      "mobile390Strategy": "Vertical process nodes",
+      "componentDecision": "custom",
+      "referencePeers": [
+        "sanjtec.com",
+        "sjh.com.tw",
+        "eptrend.com"
+      ]
+    },
+    {
+      "sectionId": "faq",
+      "type": "accordion",
+      "informationGain": "Sampling, drawings, parameters and inspection questions",
+      "purpose": "Answer buyer question for faq",
+      "factSource": "Customer FAQ sheet and verified delivery rules",
+      "contentType": "accordion",
+      "desktopStrategy": "Two-column question groups",
+      "mobile390Strategy": "Single-column accordion",
+      "componentDecision": "custom",
+      "referencePeers": [
+        "sanjtec.com",
+        "sjh.com.tw",
+        "eptrend.com"
+      ]
+    }
+  ]
+}
