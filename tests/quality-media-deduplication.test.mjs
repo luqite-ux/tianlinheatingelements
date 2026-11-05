@@ -12,8 +12,12 @@ test('the quality test-bench proof image is not reused as the PTC product cover'
     sha256('public/images/quality/test-bench.jpg'),
     sha256('public/images/products/ptc-silicone.jpg'),
   )
+  assert.equal(
+    sha256('public/images/products/ptc-silicone.jpg'),
+    sha256('public/images/products/gallery/图片12.jpg'),
+  )
 
   const products = source('lib/products.ts')
-  assert.match(products, /Rows of finned PTC heater assemblies prepared for production/)
+  assert.match(products, /Wired finned PTC heater assemblies prepared for installation/)
   assert.doesNotMatch(products, /Bench test setup with multi-channel power meters/)
 })

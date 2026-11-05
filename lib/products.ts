@@ -189,7 +189,7 @@ const records: ProductRecord[] = [
         options: ['Target constant temperature within 40–180 °C', 'Custom lead length and termination', 'Custom mounting holes', 'Silicone encapsulation outline'],
         typicalUses: ['Constant-temperature heating modules', 'Small appliance heating', 'Equipment warming'],
         imageAlt:
-          'Rows of finned PTC heater assemblies prepared for production',
+          'Wired finned PTC heater assemblies prepared for installation',
       },
     },
   },
