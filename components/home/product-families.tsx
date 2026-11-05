@@ -36,6 +36,7 @@ export function ProductFamilies() {
                       src={p.image}
                       alt={p.imageAlt}
                       sizes="(min-width: 1024px) 400px, (min-width: 640px) 45vw, 100vw"
+                      fit={p.slug === 'silicone-encapsulated-ptc-heating-element' ? 'cover' : 'contain'}
                       className="aspect-[4/3] transition-colors group-hover:bg-paper"
                     />
                     <span className="eyebrow absolute left-4 top-4 text-copper-ink">{p.model}</span>

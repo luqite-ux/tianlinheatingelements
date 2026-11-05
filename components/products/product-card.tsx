@@ -14,6 +14,7 @@ export function ProductCard({ product, priority = false }: { product: Product; p
           alt={product.imageAlt}
           sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 92vw"
           priority={priority}
+          fit={product.slug === 'silicone-encapsulated-ptc-heating-element' ? 'cover' : 'contain'}
           className="transition-transform duration-500 group-hover:scale-[1.02] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
         />
       </div>

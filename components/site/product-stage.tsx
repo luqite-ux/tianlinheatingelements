@@ -7,12 +7,20 @@ interface ProductStageProps {
   sizes: string
   priority?: boolean
   className?: string
+  fit?: 'contain' | 'cover'
 }
 
-export function ProductStage({ src, alt, sizes, priority, className }: ProductStageProps) {
+export function ProductStage({ src, alt, sizes, priority, className, fit = 'contain' }: ProductStageProps) {
   return (
     <div className={cn('relative aspect-square w-full bg-white', className)}>
-      <Image src={src} alt={alt} fill sizes={sizes} priority={priority} className="object-contain" />
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes={sizes}
+        priority={priority}
+        className={fit === 'cover' ? 'object-cover object-center' : 'object-contain'}
+      />
     </div>
   )
 }

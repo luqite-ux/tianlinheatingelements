@@ -21,3 +21,13 @@ test('the quality test-bench proof image is not reused as the PTC product cover'
   assert.match(products, /Wired finned PTC heater assemblies prepared for installation/)
   assert.doesNotMatch(products, /Bench test setup with multi-channel power meters/)
 })
+
+test('the wired PTC cover fills product cards without side gutters', () => {
+  const stage = source('components/site/product-stage.tsx')
+  const families = source('components/home/product-families.tsx')
+  const cards = source('components/products/product-card.tsx')
+
+  assert.match(stage, /fit\?: 'contain' \| 'cover'/)
+  assert.match(families, /fit=\{p\.slug === 'silicone-encapsulated-ptc-heating-element' \? 'cover' : 'contain'\}/)
+  assert.match(cards, /fit=\{product\.slug === 'silicone-encapsulated-ptc-heating-element' \? 'cover' : 'contain'\}/)
+})
