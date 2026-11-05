@@ -11,9 +11,8 @@ export function CertificateRail({ items }: { items: CertificateItem[] }) {
   const scroller = useRef<HTMLUListElement | null>(null)
   const [active, setActive] = useState(0)
   const [playing, setPlaying] = useState(true)
-  const [hovering, setHovering] = useState(false)
   const [focusing, setFocusing] = useState(false)
-  const paused = !playing || hovering || focusing
+  const paused = !playing || focusing
 
   const scrollToIndex = useCallback(
     (index: number) => {
@@ -26,6 +25,12 @@ export function CertificateRail({ items }: { items: CertificateItem[] }) {
     },
     [items.length],
   )
+
+  useEffect(() => {
+    if (paused || items.length < 2) return
+    const timer = setTimeout(() => scrollToIndex(active + 1), SEGMENT_DURATION)
+    return () => clearTimeout(timer)
+  }, [active, items.length, paused, scrollToIndex])
 
   useEffect(() => {
     const el = scroller.current
@@ -56,8 +61,6 @@ export function CertificateRail({ items }: { items: CertificateItem[] }) {
 
   return (
     <div
-      onMouseEnter={() => setHovering(true)}
-      onMouseLeave={() => setHovering(false)}
       onFocusCapture={(e) => {
         if ((e.target as HTMLElement).matches(':focus-visible')) setFocusing(true)
       }}
@@ -116,9 +119,6 @@ export function CertificateRail({ items }: { items: CertificateItem[] }) {
                     data-state={state}
                     data-paused={paused}
                     style={{ '--seg-duration': `${SEGMENT_DURATION}ms` } as CSSProperties}
-                    onAnimationEnd={(e) => {
-                      if (e.animationName === 'seg-fill' && i === active) scrollToIndex(active + 1)
-                    }}
                     className="seg-fill absolute inset-0 block bg-electric"
                   />
                 </span>
