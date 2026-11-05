@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import Image from 'next/image'
 import { PageHeader } from '@/components/site/page-header'
+import { CaseDrawingViewer } from '@/components/cases/case-drawing-viewer'
 import { CtaBand } from '@/components/site/cta-band'
 import { CtaLink } from '@/components/site/cta-link'
 import { EvidenceEmpty } from '@/components/site/evidence-empty'
@@ -52,9 +52,13 @@ export default function CasesPage() {
                   <Reveal delay={(i % 3) * 70} className="h-full">
                     <article className="group relative flex h-full flex-col border border-line bg-white transition-colors hover:border-electric">
                       {c.image && (
-                        <div className="relative aspect-[4/3] border-b border-line bg-paper">
-                          <Image src={c.image.src} alt={c.image.alt} fill sizes="(min-width: 1024px) 30vw, 92vw" className="object-contain p-4" />
-                        </div>
+                        <CaseDrawingViewer
+                          src={c.image.src}
+                          alt={c.image.alt}
+                          title={c.title}
+                          sizes="(min-width: 1024px) 30vw, 92vw"
+                          frameClassName="aspect-[4/3] border-b border-line"
+                        />
                       )}
                       <div className="flex flex-1 flex-col p-5">
                         <p className="eyebrow text-electric">{c.application}</p>

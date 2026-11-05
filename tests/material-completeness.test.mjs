@@ -46,6 +46,21 @@ test('case cards use the three supplied full-resolution engineering drawings', (
   )
 })
 
+test('case drawings open from thumbnails in an accessible full-size viewer', () => {
+  const list = read('app/cases/page.tsx')
+  const detail = read('app/cases/[slug]/page.tsx')
+  const viewer = read('components/cases/case-drawing-viewer.tsx')
+
+  assert.match(list, /CaseDrawingViewer/)
+  assert.match(detail, /CaseDrawingViewer/)
+  assert.match(viewer, /cursor-zoom-in/)
+  assert.match(viewer, /role="dialog"/)
+  assert.match(viewer, /aria-modal="true"/)
+  assert.match(viewer, /event\.key === 'Escape'/)
+  assert.match(viewer, /previousTrigger\.current\?\.focus/)
+  assert.match(viewer, /max-h-\[90vh\]/)
+})
+
 test('all supplied partner logos remain in the continuous client loop', () => {
   const logoFiles = readdirSync(new URL('../public/images/clients', import.meta.url)).filter((name) => /^client-\d{2}\./.test(name))
   assert.equal(logoFiles.length, 11)

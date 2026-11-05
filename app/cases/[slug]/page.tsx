@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
 import { notFound } from 'next/navigation'
+import { CaseDrawingViewer } from '@/components/cases/case-drawing-viewer'
 import { PageHeader } from '@/components/site/page-header'
 import { CtaBand } from '@/components/site/cta-band'
 import { Reveal } from '@/components/motion/reveal'
@@ -62,9 +62,13 @@ export default async function CaseDetailPage({ params }: { params: Promise<{ slu
           <div className="space-y-8 lg:col-span-5">
             {review.image && (
               <Reveal>
-                <div className="relative aspect-[4/3] border border-line bg-paper">
-                  <Image src={review.image.src} alt={review.image.alt} fill sizes="(min-width: 1024px) 40vw, 92vw" className="object-contain p-4" />
-                </div>
+                <CaseDrawingViewer
+                  src={review.image.src}
+                  alt={review.image.alt}
+                  title={review.title}
+                  sizes="(min-width: 1024px) 40vw, 92vw"
+                  frameClassName="aspect-[4/3] border border-line"
+                />
               </Reveal>
             )}
             <Reveal delay={80}>
