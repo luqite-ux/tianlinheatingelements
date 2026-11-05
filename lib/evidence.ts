@@ -6,6 +6,7 @@ export interface CertificateItem {
   title: string
   image: string
   alt: string
+  rotation?: 180
 }
 
 /**
@@ -16,8 +17,8 @@ export const certificates: Localized<CertificateItem[]> = {
   en: [
     { id: 'iso-9001-cn', type: 'Management system', title: 'ISO 9001 Certificate — Chinese', image: '/images/certificates/iso-9001-cn.png', alt: 'ISO 9001 quality management system certificate in Chinese' },
     { id: 'iso-9001-en', type: 'Management system', title: 'ISO 9001 Certificate — English', image: '/images/certificates/iso-9001-en.png', alt: 'ISO 9001 certificate of registration in English' },
-    { id: 'ccc-1', type: 'Product certification', title: 'CCC Certificate — Product Group 1', image: '/images/certificates/ccc-1.jpg', alt: 'China Compulsory Certification certificate supplied by Tianlin' },
-    { id: 'ccc-2', type: 'Product certification', title: 'CCC Certificate — Product Group 2', image: '/images/certificates/ccc-2.jpg', alt: 'Second China Compulsory Certification certificate supplied by Tianlin' },
+    { id: 'ccc-1', type: 'Product certification', title: 'CCC Certificate — Product Group 1', image: '/images/certificates/ccc-1.jpg', alt: 'China Compulsory Certification certificate supplied by Tianlin', rotation: 180 },
+    { id: 'ccc-2', type: 'Product certification', title: 'CCC Certificate — Product Group 2', image: '/images/certificates/ccc-2.jpg', alt: 'Second China Compulsory Certification certificate supplied by Tianlin', rotation: 180 },
     { id: 'ce', type: 'Product certification', title: 'CE Certificate', image: '/images/certificates/ce.jpg', alt: 'CE certificate supplied for Tianlin products' },
     { id: 'explosion-proof', type: 'Product certification', title: 'Explosion-Proof Certificate', image: '/images/certificates/explosion-proof.png', alt: 'Explosion-proof conformity certificate supplied by Tianlin' },
     { id: 'type-approval', type: 'Test evidence', title: 'Product Type Approval Report', image: '/images/certificates/type-approval.png', alt: 'Cover page of the supplied product type approval report' },

@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState, type CSSProperties } from 're
 import Image from 'next/image'
 import { ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react'
 import type { CertificateItem } from '@/lib/evidence'
+import { cn } from '@/lib/utils'
 
 const SEGMENT_DURATION = 6000
 
@@ -80,7 +81,7 @@ export function CertificateRail({ items }: { items: CertificateItem[] }) {
                   alt={item.alt}
                   fill
                   sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                  className="object-contain p-2"
+                  className={cn('object-contain p-2', item.rotation === 180 ? 'rotate-180' : undefined)}
                   loading={i < 4 ? 'eager' : 'lazy'}
                 />
               </div>
