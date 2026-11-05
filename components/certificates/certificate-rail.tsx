@@ -2,9 +2,10 @@
 
 import { useCallback, useEffect, useRef, useState, type CSSProperties } from 'react'
 import Image from 'next/image'
-import { ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react'
+import { ChevronLeft, ChevronRight, FileText, Pause, Play } from 'lucide-react'
 import type { CertificateItem } from '@/lib/evidence'
 import { cn } from '@/lib/utils'
+import { CertificateDocumentDialog } from './certificate-document-dialog'
 
 const SEGMENT_DURATION = 6000
 
@@ -13,6 +14,7 @@ export function CertificateRail({ items }: { items: CertificateItem[] }) {
   const [active, setActive] = useState(0)
   const [playing, setPlaying] = useState(true)
   const [focusing, setFocusing] = useState(false)
+  const [selected, setSelected] = useState<CertificateItem | null>(null)
   const paused = !playing || focusing
 
   const scrollToIndex = useCallback(
@@ -74,8 +76,8 @@ export function CertificateRail({ items }: { items: CertificateItem[] }) {
       >
         {items.map((item, i) => (
           <li key={item.id} className="w-full shrink-0 snap-start sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)]">
-            <figure className="group">
-              <div className="relative aspect-[3/4] w-full border border-line bg-white transition-colors group-hover:border-electric/50">
+            <figure className="group flex h-full flex-col">
+              <button type="button" onClick={() => setSelected(item)} className="relative aspect-[3/4] w-full border border-line bg-white text-left transition-colors group-hover:border-electric/50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-electric" aria-label={`View document: ${item.title}`}>
                 <Image
                   src={item.image}
                   alt={item.alt}
@@ -84,10 +86,12 @@ export function CertificateRail({ items }: { items: CertificateItem[] }) {
                   className={cn('object-contain p-2', item.rotation === 180 ? 'rotate-180' : undefined)}
                   loading={i < 4 ? 'eager' : 'lazy'}
                 />
-              </div>
-              <figcaption className="mt-3">
+                <span className="absolute bottom-3 right-3 inline-flex min-h-9 items-center gap-2 bg-navy-deep px-3 text-xs font-semibold text-white shadow-lg"><FileText aria-hidden="true" className="size-4" />View document</span>
+              </button>
+              <figcaption className="mt-3 flex-1">
                 <span className="eyebrow block text-copper-ink">{item.type}</span>
                 <span className="mt-1 block text-sm font-medium text-navy-deep">{item.title}</span>
+                <span className="mt-1 block text-xs text-muted-foreground">{item.pageCount ?? item.pages?.length ?? 1} {(item.pageCount ?? item.pages?.length ?? 1) === 1 ? 'page' : 'pages'}</span>
               </figcaption>
             </figure>
           </li>
@@ -145,6 +149,7 @@ export function CertificateRail({ items }: { items: CertificateItem[] }) {
           {playing ? <Pause aria-hidden="true" className="size-4" /> : <Play aria-hidden="true" className="size-4" />}
         </button>
       </div>
+      {selected ? <CertificateDocumentDialog item={selected} onClose={() => setSelected(null)} /> : null}
     </div>
   )
 }

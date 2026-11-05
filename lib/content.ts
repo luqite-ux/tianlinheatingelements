@@ -138,7 +138,7 @@ export const faqGroups: Localized<FaqGroup[]> = {
         },
         {
           q: 'Can I see certificates?',
-          a: 'Certificate scans are being prepared for publication on the Certificates page. Contact us to discuss the documents your supplier review requires.',
+          a: 'View each certificate and report on the Certificates page. Multi-page documents open page by page, and you can contact engineering if your supplier review needs an additional file.',
         },
       ],
     },
