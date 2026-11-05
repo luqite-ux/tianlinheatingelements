@@ -49,3 +49,10 @@ test('technical SEO exposes robots, canonical metadata and page-specific schemas
   assert.match(productPage, /Product/)
   assert.match(articlePage, /Article/)
 })
+
+test('admin login is a server-rendered native POST form', async () => {
+  const page = await read('app/admin/login/page.tsx')
+  assert.doesNotMatch(page, /['"]use client['"]/)
+  assert.match(page, /<form action="\/api\/auth\/login" method="post"/)
+  assert.doesNotMatch(page, /Server Action|useState|onSubmit/)
+})
