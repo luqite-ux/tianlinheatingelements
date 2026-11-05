@@ -56,3 +56,22 @@ test('admin login is a server-rendered native POST form', async () => {
   assert.match(page, /<form action="\/api\/auth\/login" method="post"/)
   assert.doesNotMatch(page, /Server Action|useState|onSubmit/)
 })
+
+test('navigation gives immediate feedback while a route is loading', async () => {
+  const header = await read('components/site/header.tsx')
+  const loading = await read('app/loading.tsx')
+
+  assert.match(header, /const \[navigating, setNavigating\] = useState\(false\)/)
+  assert.match(header, /onClick=\{\(event\) => beginNavigation\(event, item\.href\)\}/)
+  assert.match(header, /role="status"/)
+  assert.match(header, /Loading page/)
+  assert.match(loading, /aria-label="Loading page"/)
+  assert.match(loading, /animate-pulse/)
+})
+
+test('responsive image optimization is enabled for local and tenant R2 media', async () => {
+  const config = await read('next.config.mjs')
+  assert.doesNotMatch(config, /unoptimized:\s*true/)
+  assert.match(config, /remotePatterns/)
+  assert.match(config, /pub-c7a22068052144a5805830c30d280128\.r2\.dev/)
+})

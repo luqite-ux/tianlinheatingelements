@@ -1,7 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'pub-c7a22068052144a5805830c30d280128.r2.dev',
+        pathname: '/products/52d3d853-d765-471b-8fce-58b5c151603e/**',
+      },
+    ],
+    minimumCacheTTL: 86400,
   },
   async rewrites() {
     const adminUrl = process.env.NEXT_PUBLIC_ADMIN_URL?.trim().replace(/[\r\n]/g, '').replace(/\/$/, '')

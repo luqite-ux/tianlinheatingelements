@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, type MouseEvent } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -17,11 +17,20 @@ function isActive(pathname: string, href: string) {
 export function SiteHeader() {
   const pathname = usePathname()
   const [open, setOpen] = useState(false)
+  const [navigating, setNavigating] = useState(false)
   const items = pick(navItems)
 
   useEffect(() => {
     setOpen(false)
+    setNavigating(false)
   }, [pathname])
+
+  const beginNavigation = (event: MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return
+    if (href === pathname) return
+    setNavigating(true)
+    setOpen(false)
+  }
 
   useEffect(() => {
     if (!open) return
@@ -51,7 +60,7 @@ export function SiteHeader() {
       </div>
 
       <div className="wrap flex min-h-16 items-center justify-between gap-4">
-        <Link href="/" aria-label="Anhui Tianlin Electric Appliance, home" className="flex min-h-11 shrink-0 items-center">
+        <Link href="/" aria-label="Anhui Tianlin Electric Appliance, home" onClick={(event) => beginNavigation(event, '/')} className="flex min-h-11 shrink-0 items-center">
           <Image
             src="/images/logo.png"
             alt="TL Anhui Tianlin Electric Appliance Co., Ltd."
@@ -70,6 +79,7 @@ export function SiteHeader() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
+                    onClick={(event) => beginNavigation(event, item.href)}
                     aria-current={active ? 'page' : undefined}
                     className={cn(
                       'relative inline-flex min-h-11 items-center px-3 text-[15px] font-medium transition-colors hover:text-electric',
@@ -89,6 +99,7 @@ export function SiteHeader() {
         <div className="flex items-center gap-2">
           <Link
             href="/contact"
+            onClick={(event) => beginNavigation(event, '/contact')}
             className="hidden min-h-11 items-center rounded-sm bg-electric px-5 text-sm font-semibold text-white transition-colors hover:bg-[#1450b8] sm:inline-flex"
           >
             Send RFQ
@@ -119,6 +130,7 @@ export function SiteHeader() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
+                    onClick={(event) => beginNavigation(event, item.href)}
                     aria-current={active ? 'page' : undefined}
                     className={cn(
                       'flex min-h-12 items-center justify-between text-base font-medium',
@@ -131,7 +143,7 @@ export function SiteHeader() {
               )
             })}
             <li>
-              <Link href="/contact" className="flex min-h-12 items-center text-base font-semibold text-electric">
+              <Link href="/contact" onClick={(event) => beginNavigation(event, '/contact')} className="flex min-h-12 items-center text-base font-semibold text-electric">
                 Contact / RFQ
               </Link>
             </li>
@@ -148,6 +160,12 @@ export function SiteHeader() {
           </div>
         </nav>
       </div>
+      {navigating ? (
+        <div role="status" aria-live="polite" className="pointer-events-none absolute inset-x-0 bottom-0 h-1 overflow-hidden bg-electric/20">
+          <span className="sr-only">Loading page</span>
+          <span aria-hidden="true" className="block h-full w-2/3 animate-pulse bg-electric" />
+        </div>
+      ) : null}
     </header>
   )
 }
