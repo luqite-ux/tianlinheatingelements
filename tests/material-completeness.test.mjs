@@ -1,8 +1,10 @@
 import assert from 'node:assert/strict'
+import { createHash } from 'node:crypto'
 import { readFileSync, readdirSync } from 'node:fs'
 import test from 'node:test'
 
 const read = (path) => readFileSync(new URL(`../${path}`, import.meta.url), 'utf8')
+const sha256 = (path) => createHash('sha256').update(readFileSync(new URL(`../${path}`, import.meta.url))).digest('hex')
 
 test('published certificate copy does not claim scans are still being prepared', () => {
   const content = read('lib/content.ts')
@@ -31,6 +33,17 @@ test('drawing cases retain supplied electrical and assembly parameters', () => {
   assert.match(evidence, /label:'Thermal fuse',value:'121 °C'/)
   assert.match(evidence, /Drawing number[^\n]*9023000912/)
   assert.match(evidence, /Drawing number[^\n]*9023001625/)
+})
+
+test('case cards use the three supplied full-resolution engineering drawings', () => {
+  assert.deepEqual(
+    [1, 2, 3].map((index) => sha256(`public/images/cases/ptc-drawing-${index}.png`)),
+    [
+      'f71601d903c5a92d9d8d56701149895a977ebbef99b370155183b77d1fe505f8',
+      '8b32d2931fd46a81a0fa0ca24b48243b3f2094d65078e4c58bd28cf210b9272a',
+      '370ec0eac800092577af43c679dad3c2acfbb02c7650891352c5184b9d4ea6ce',
+    ],
+  )
 })
 
 test('all supplied partner logos remain in the continuous client loop', () => {
