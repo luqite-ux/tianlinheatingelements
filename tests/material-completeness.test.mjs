@@ -47,12 +47,19 @@ test('case cards use the three supplied full-resolution engineering drawings', (
 })
 
 test('case drawings open from thumbnails in an accessible full-size viewer', () => {
+  const evidence = read('lib/evidence.ts')
   const list = read('app/cases/page.tsx')
   const detail = read('app/cases/[slug]/page.tsx')
   const viewer = read('components/cases/case-drawing-viewer.tsx')
 
+  assert.match(evidence, /ptc-drawing-1-preview\.jpg/)
+  assert.match(evidence, /ptc-drawing-2-preview\.jpg/)
+  assert.match(evidence, /ptc-drawing-3-preview\.jpg/)
   assert.match(list, /CaseDrawingViewer/)
   assert.match(detail, /CaseDrawingViewer/)
+  assert.match(viewer, /previewSrc/)
+  assert.match(viewer, /unoptimized/)
+  assert.match(viewer, /Open original drawing/)
   assert.match(viewer, /cursor-zoom-in/)
   assert.match(viewer, /role="dialog"/)
   assert.match(viewer, /aria-modal="true"/)

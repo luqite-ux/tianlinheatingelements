@@ -2,18 +2,19 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
-import { Expand, X } from 'lucide-react'
+import { ExternalLink, Expand, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 type CaseDrawingViewerProps = {
   src: string
+  previewSrc: string
   alt: string
   title: string
   frameClassName?: string
   sizes: string
 }
 
-export function CaseDrawingViewer({ src, alt, title, frameClassName, sizes }: CaseDrawingViewerProps) {
+export function CaseDrawingViewer({ src, previewSrc, alt, title, frameClassName, sizes }: CaseDrawingViewerProps) {
   const [open, setOpen] = useState(false)
   const [loadFailed, setLoadFailed] = useState(false)
   const previousTrigger = useRef<HTMLButtonElement | null>(null)
@@ -76,7 +77,7 @@ export function CaseDrawingViewer({ src, alt, title, frameClassName, sizes }: Ca
           frameClassName,
         )}
       >
-        <Image src={src} alt={alt} fill sizes={sizes} className="object-contain p-4 transition duration-300 group-hover/drawing:scale-[1.015] motion-reduce:transition-none motion-reduce:group-hover/drawing:scale-100" />
+        <Image src={previewSrc} alt={alt} fill sizes={sizes} unoptimized className="object-contain p-4 transition duration-300 group-hover/drawing:scale-[1.015] motion-reduce:transition-none motion-reduce:group-hover/drawing:scale-100" />
         <span className="absolute bottom-3 right-3 inline-flex size-10 translate-y-1 items-center justify-center bg-white/95 text-navy-deep opacity-0 shadow-lg transition group-hover/drawing:translate-y-0 group-hover/drawing:opacity-100 group-focus-visible/drawing:translate-y-0 group-focus-visible/drawing:opacity-100 motion-reduce:transition-none">
           <Expand aria-hidden="true" className="size-4" />
         </span>
@@ -89,8 +90,12 @@ export function CaseDrawingViewer({ src, alt, title, frameClassName, sizes }: Ca
             {loadFailed ? (
               <div className="grid h-full place-items-center p-8 text-center text-navy-deep">This drawing could not be displayed.</div>
             ) : (
-              <Image src={src} alt={alt} fill priority sizes="96vw" onError={() => setLoadFailed(true)} className="object-contain p-2 sm:p-4" />
+              <Image src={previewSrc} alt={alt} fill priority unoptimized sizes="96vw" onError={() => setLoadFailed(true)} className="object-contain p-2 sm:p-4" />
             )}
+            <a href={src} target="_blank" rel="noreferrer" className="absolute bottom-2 left-2 z-10 inline-flex min-h-11 items-center gap-2 bg-white px-4 text-sm font-semibold text-navy-deep shadow-lg hover:text-electric">
+              <ExternalLink aria-hidden="true" className="size-4" />
+              Open original drawing
+            </a>
             <button data-close type="button" aria-label="Close enlarged drawing" onClick={close} className="absolute right-2 top-2 inline-flex size-11 items-center justify-center bg-navy-deep text-white shadow-lg hover:bg-electric focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
               <X aria-hidden="true" className="size-5" />
             </button>

@@ -54,6 +54,7 @@ export default function CasesPage() {
                       {c.image && (
                         <CaseDrawingViewer
                           src={c.image.src}
+                          previewSrc={c.image.previewSrc}
                           alt={c.image.alt}
                           title={c.title}
                           sizes="(min-width: 1024px) 30vw, 92vw"

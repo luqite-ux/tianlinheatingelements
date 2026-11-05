@@ -64,6 +64,7 @@ export default async function CaseDetailPage({ params }: { params: Promise<{ slu
               <Reveal>
                 <CaseDrawingViewer
                   src={review.image.src}
+                  previewSrc={review.image.previewSrc}
                   alt={review.image.alt}
                   title={review.title}
                   sizes="(min-width: 1024px) 40vw, 92vw"

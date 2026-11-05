@@ -87,7 +87,7 @@ export interface CaseReview {
   requirement: string[]
   reviewNotes: string[]
   parameters: { label: string; value: string }[]
-  image?: { src: string; alt: string }
+  image?: { src: string; previewSrc: string; alt: string }
 }
 
 export const caseReviews: Localized<CaseReview[]> = {
@@ -98,7 +98,7 @@ export const caseReviews: Localized<CaseReview[]> = {
       requirement: ['Match the supplied installation envelope', 'Keep lead and terminal positions consistent with the drawing', 'Confirm rated electrical values against the approved drawing'],
       reviewNotes: ['This page describes the supplied drawing, not a universal PTC specification.', 'Final dimensions and tolerances are confirmed for each order.'],
       parameters: [{label:'Drawing number',value:'9023000912'},{label:'Rated voltage',value:'220 V / 50 Hz'},{label:'Rated input power',value:'2000 W'},{label:'Power tolerance',value:'-10% to +5%'},{label:'Product family',value:'Silicone-encapsulated ceramic PTC heater'}],
-      image: {src:'/images/cases/ptc-drawing-1.png',alt:'Supplied 2 kW ceramic PTC heater technical drawing'}
+      image: {src:'/images/cases/ptc-drawing-1.png',previewSrc:'/images/cases/ptc-drawing-1-preview.jpg',alt:'Supplied 2 kW ceramic PTC heater technical drawing'}
     },
     {
       slug: 'kfrd-72-ptc-assembly-model-review', title: 'KFRD-72 PTC Assembly Model Review', application: 'HVAC integration',
@@ -106,7 +106,7 @@ export const caseReviews: Localized<CaseReview[]> = {
       requirement: ['Review mounting geometry', 'Check the assembly envelope', 'Confirm lead routing before sampling'],
       reviewNotes: ['Model references are retained as drawing evidence only.', 'No customer appliance identity is used as a public performance claim.'],
       parameters: [{label:'Drawing number',value:'9023000912'},{label:'Drawing revision',value:'B'},{label:'Rated voltage',value:'220 V / 50 Hz'},{label:'Rated input power',value:'2000 W'},{label:'Power tolerance',value:'-10% to +5%'},{label:'PTC element',value:'245 °C'},{label:'Thermostat',value:'90 °C / 8 A'},{label:'Thermal fuse',value:'121 °C'},{label:'Support heat resistance',value:'PTC support ≥ 220 °C; thermal-protector support ≥ 150 °C; leads and sleeves ≥ 200 °C'},{label:'Certification reference',value:'CQC15002121699'}],
-      image: {src:'/images/cases/ptc-drawing-2.png',alt:'Supplied PTC heater assembly model drawing'}
+      image: {src:'/images/cases/ptc-drawing-2.png',previewSrc:'/images/cases/ptc-drawing-2-preview.jpg',alt:'Supplied PTC heater assembly model drawing'}
     },
     {
       slug: 'kfrd-120-ptc-heater-review', title: 'KFRD-120 PTC Heater Drawing Review', application: 'Commercial air conditioning',
@@ -114,7 +114,7 @@ export const caseReviews: Localized<CaseReview[]> = {
       requirement: ['Confirm the installation envelope', 'Review electrical and dimensional callouts', 'Prepare the sample from the approved revision'],
       reviewNotes: ['Values shown belong to this drawing reference.', 'They are not applied to other PTC products without review.'],
       parameters: [{label:'Drawing number',value:'9023001625'},{label:'Assembly reference',value:'KFRD-120L-BYN3 3.0.ZL.2'},{label:'Review stage',value:'Drawing-led configuration'},{label:'Engineering focus',value:'Installation envelope, electrical callouts and dimensional callouts'},{label:'Product family',value:'Ceramic PTC assembly'}],
-      image: {src:'/images/cases/ptc-drawing-3.png',alt:'Supplied KFRD-120 ceramic PTC heater drawing'}
+      image: {src:'/images/cases/ptc-drawing-3.png',previewSrc:'/images/cases/ptc-drawing-3-preview.jpg',alt:'Supplied KFRD-120 ceramic PTC heater drawing'}
     },
   ],
 }
