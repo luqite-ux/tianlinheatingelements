@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import { PageHeader } from '@/components/site/page-header'
 import { CtaBand } from '@/components/site/cta-band'
@@ -84,6 +85,22 @@ export default function AboutPage() {
                   </a>
                 </p>
               </address>
+            </Reveal>
+            <Reveal delay={160}>
+              <figure className="mt-6">
+                <div className="relative aspect-[16/10] overflow-hidden bg-paper">
+                  <Image
+                    src="/images/factory/1.jpg"
+                    alt="Tianlin factory entrance in Ningguo, Anhui"
+                    fill
+                    sizes="(min-width: 1024px) 50vw, 100vw"
+                    className="object-cover object-center"
+                  />
+                </div>
+                <figcaption className="mt-3 text-xs text-muted-foreground">
+                  Tianlin factory entrance in Ningguo, Anhui.
+                </figcaption>
+              </figure>
             </Reveal>
           </div>
         </div>

@@ -43,15 +43,15 @@ export function ManufacturingBand() {
           <figure>
             <div className="relative aspect-[4/3] w-full sm:aspect-[16/10]">
               <Image
-                src="/images/banner/banner-2.jpg"
-                alt="Robotic arms handling tubular and PTC heating elements on a production conveyor"
+                src="/images/factory/customer-workshop-overview.jpg"
+                alt="Tianlin heating-element workshop with production stations and finished cable assemblies"
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
-                className="object-cover object-[18%_50%]"
+                className="object-cover object-[50%_58%]"
               />
             </div>
             <figcaption className="wrap mt-3 text-xs text-muted-foreground lg:px-0">
-              Illustrative artwork of a heating-element production line.
+              Tianlin heating-element workshop in Ningguo, Anhui.
             </figcaption>
           </figure>
         </Reveal>

@@ -94,7 +94,7 @@ export function HeroCarousel() {
               aria-label={`${i + 1} of ${slides.length}`}
               aria-hidden={!active}
               data-active={active}
-              className="hero-slide relative [grid-area:1/1] md:aspect-[16/7] md:max-h-[740px] md:min-h-[540px]"
+              className="hero-slide relative w-full [grid-area:1/1] md:aspect-[16/7] md:max-h-[740px] md:min-h-[540px]"
             >
               <div className="relative aspect-[4/3] w-full md:absolute md:inset-0 md:aspect-auto">
                 <Image
@@ -117,7 +117,7 @@ export function HeroCarousel() {
                 <div className="wrap md:flex md:h-full md:items-center md:pb-10">
                   <div
                     className={cn(
-                      'hero-copy max-w-xl md:max-w-[34rem] md:bg-white/45 md:p-8 md:backdrop-blur-[2px]',
+                      'hero-copy max-w-xl md:max-w-[34rem] md:bg-white/70 md:p-8 md:backdrop-blur-[2px]',
                       slide.copySide === 'right' && 'md:ml-auto',
                     )}
                   >
