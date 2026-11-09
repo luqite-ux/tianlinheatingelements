@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { MapPin, Mail, Phone } from 'lucide-react'
 import { company, footerExtra, navItems } from '@/lib/site'
@@ -13,7 +14,20 @@ export function SiteFooter() {
     <footer className="tech-grid-dark bg-navy-deep text-white/80">
       <div className="wrap grid gap-10 py-14 md:grid-cols-12">
         <div className="md:col-span-5">
-          <p className="text-xl font-semibold text-white">{company.name}</p>
+          <Link
+            href="/"
+            aria-label="Anhui Tianlin Electric Appliance, home"
+            className="inline-flex min-h-11 items-center"
+          >
+            <Image
+              src="/images/logo.png"
+              alt="TL Anhui Tianlin Electric Appliance Co., Ltd."
+              width={377}
+              height={75}
+              className="h-auto w-full max-w-[320px] object-contain sm:max-w-[360px]"
+            />
+          </Link>
+          <p className="mt-4 text-xl font-semibold text-white">{company.name}</p>
           <p className="mt-3 max-w-sm text-sm leading-relaxed">
             Custom heating elements for appliance OEM/ODM and industrial buyers. Founded in {company.founded}, based in Ningguo, Anhui, China.
           </p>

@@ -64,8 +64,8 @@ export function SiteHeader() {
           <Image
             src="/images/logo.png"
             alt="TL Anhui Tianlin Electric Appliance Co., Ltd."
-            width={442}
-            height={80}
+            width={377}
+            height={75}
             priority
             className="h-9 w-auto object-contain sm:h-10"
           />
