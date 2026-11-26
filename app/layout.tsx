@@ -60,6 +60,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <main id="main">{children}</main>
         <SiteFooter />
         <Analytics />
+        <script
+          async
+          src={`https://admin.globle-trade.com/api/public/analytics.js?tenantId=${encodeURIComponent(process.env.NEXT_PUBLIC_TENANT_ID || "52d3d853-d765-471b-8fce-58b5c151603e")}`}
+        />
       </body>
     </html>
   )
